@@ -61,7 +61,7 @@ $(LUA_A): $(BASE_O)
 	$(RANLIB) $@
 
 $(LUA_S): $(BASE_O)
-	$(CC) -fPIC -o $@ $(LDFLAGS) $(CORE_O) $(LIBS)
+	$(CC) -fPIC -shared -o $@ $(CORE_O) $(LIBS)
 
 $(LUA_T): $(LUA_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LUA_A) $(LIBS)
